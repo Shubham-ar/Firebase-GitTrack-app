@@ -12,10 +12,20 @@ import {
 
 import { Link } from 'react-router-dom';
 
-import UserContext from "../context/UserContext"
+import { UserContext } from "../context/UserContext"
 
 
 const Header = () => {
+
+    const context = useContext(UserContext);
+
+    // to make the functionality of navbar toggle button
+    const [isFullscreen, setIsFullscreen] = useState(false)
+
+    const toggle = () => {
+        setIsFullscreen(!isFullscreen)
+    }
+
     return (
         <Navbar color="info" light expand="md">
             <NavbarBrand>
@@ -23,21 +33,28 @@ const Header = () => {
                     SJ GitTrack Application
                 </Link>
             </NavbarBrand>
-            <NavbarToggler />
-            <Collapse navbar>
+
+            <NavbarText className="text-white">
+                { 
+                context.user?.email ? context.user?.email:""
+                }
+            </NavbarText>
+
+            <NavbarToggler onClick={toggle} />
+            <Collapse isOpen={isFullscreen} navbar>
                 <Nav style={{ marginLeft: "auto" }} navbar>
                     <NavItem>
-                        <NavLink className="text-white">
+                        <NavLink tag={Link} to="/" className="text-white">
                             Sign Up
                         </NavLink>
                     </NavItem>
                     <NavItem >
-                        <NavLink className="text-white">
+                        <NavLink tag={Link} to="/" className="text-white">
                             Sign In
                         </NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink tag={Link} className="text-white">
+                        <NavLink tag={Link} to="/" className="text-white">
                             Log Out
                         </NavLink>
                     </NavItem>
