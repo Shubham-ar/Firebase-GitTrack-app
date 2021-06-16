@@ -35,29 +35,36 @@ const Header = () => {
             </NavbarBrand>
 
             <NavbarText className="text-white">
-                { 
-                context.user?.email ? context.user?.email:""
+                {
+                    context.user?.email ? context.user?.email : ""
                 }
             </NavbarText>
 
             <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isFullscreen} navbar>
                 <Nav style={{ marginLeft: "auto" }} navbar>
-                    <NavItem>
-                        <NavLink tag={Link} to="/" className="text-white">
-                            Sign Up
-                        </NavLink>
-                    </NavItem>
-                    <NavItem >
-                        <NavLink tag={Link} to="/" className="text-white">
-                            Sign In
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink tag={Link} to="/" className="text-white">
-                            Log Out
-                        </NavLink>
-                    </NavItem>
+                    {context.user ? (
+                        <NavItem>
+                            <NavLink tag={Link} to="/" className="text-white">
+                                Log Out
+                            </NavLink>
+                        </NavItem>
+                    ) : (
+                        <>
+                            <NavItem>
+                                <NavLink tag={Link} to="/" className="text-white">
+                                    Sign Up
+                                </NavLink>
+                            </NavItem>
+                            <NavItem >
+                                <NavLink tag={Link} to="/" className="text-white">
+                                    Sign In
+                                </NavLink>
+                            </NavItem>
+                        </>
+                    )}
+
+
                 </Nav>
             </Collapse>
         </Navbar >
