@@ -27,6 +27,10 @@ import Footer from './layout/Footer';
 import Header from './layout/Header';
 
 
+//initialize the firebase
+import firebaseConfig from './config/firebaseConfig';
+firebase.initializeApp(firebaseConfig)
+
 function App() {
 
   const [user, setUser] = useState(null)
