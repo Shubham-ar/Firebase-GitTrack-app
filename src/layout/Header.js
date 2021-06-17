@@ -52,12 +52,12 @@ const Header = () => {
                     ) : (
                         <>
                             <NavItem>
-                                <NavLink tag={Link} to="/" className="text-white">
+                                <NavLink tag={Link} to="/signup" className="text-white">
                                     Sign Up
                                 </NavLink>
                             </NavItem>
                             <NavItem >
-                                <NavLink tag={Link} to="/" className="text-white">
+                                <NavLink tag={Link} to="/signin" className="text-white">
                                     Sign In
                                 </NavLink>
                             </NavItem>
