@@ -45,7 +45,7 @@ const Header = () => {
                 <Nav style={{ marginLeft: "auto" }} navbar>
                     {context.user ? (
                         <NavItem>
-                            <NavLink tag={Link} to="/" className="text-white">
+                            <NavLink tag={Link} onClick={() => context.setUser(null)} className="text-white">
                                 Log Out
                             </NavLink>
                         </NavItem>
