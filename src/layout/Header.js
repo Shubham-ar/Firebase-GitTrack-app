@@ -27,7 +27,7 @@ const Header = () => {
     }
 
     return (
-        <Navbar color="info" light expand="md">
+        <Navbar color="dark" light expand="md">
             <NavbarBrand>
                 <Link to="/" className="text-white p-2">
                     SJ GitTrack Application
