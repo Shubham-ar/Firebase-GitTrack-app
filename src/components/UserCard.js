@@ -11,7 +11,9 @@ const UserCard = ({ user }) => {
         <Card className="text-center mt-3 mb-4">
             <img
                 src={user.avatar_url}
-                className="img-thumbnail"
+                height="200px"
+                width="200px"
+                style={{ margin: "auto" }}
             />
             <CardBody>
                 <div className="text-primary">
@@ -29,9 +31,9 @@ const UserCard = ({ user }) => {
                 <div className="text-info">
                     Followers:   {user.followers}
                 </div>
-            </CardBody>
+            </CardBody >
 
-        </Card>
+        </Card >
     );
 }
 

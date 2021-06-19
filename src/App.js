@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css'
 
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 // reactrouter
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
