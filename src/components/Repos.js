@@ -6,13 +6,26 @@ const Repos = ({ repos_url }) => {
 
     const [repos, setRepos] = useState([])
 
-    const fetchRepo = async () => {
-        const response = await axios.get(repos_url)
+    const fetchRepos = async () => {
+        const { data } = await axios.get(repos_url)
+        setRepos(data)
 
     }
+
+    useEffect(() => {
+        fetchRepos();
+    }, [repos_url])
+
     return (
         <ListGroup>
+            {repos.map(repo => (
+                <ListGroupItem key={repo.id}>
+                    <div className="text-primary">{repo.name}</div>
+                    <div className="text-secondary">{repo.language}</div>
+                    <div className="text-primary">{repo.description}</div>
 
+                </ListGroupItem>
+            ))}
         </ListGroup>
     );
 }
